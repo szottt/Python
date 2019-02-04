@@ -1,0 +1,41 @@
+#44 - ELAGORE UM PROGRAMA QUE CALCULE O VALOR A SER PAGO POR UM PRODUTO
+# CONSIDERANDO O SEU PREÇO NORMAL E CONDIÇÃO DE PAGAMENTO
+# (A VISTA 'DINHEIRO E CHEQUE' 10%, A VISTA NO CARTAO 5%, EM ATE 2X NO CARTAO PREÇO NORMAL
+# E 3X OU MAIS NO CARTAO 20% DE JUROS.
+
+cores = {
+    'limpa':'\033[m',
+    'azul':'\033[4;34m',
+    'amarelo':'\033[4;32m',
+    'sublinhado':'\033[4m',
+    'negrito':'\033[1m'
+}
+
+
+
+print('{}SEJA BEM VINDO A NOSSA LOJA DIGITAL{}'.format(cores['sublinhado'], cores['limpa']))
+produto = float(input('Digite o valor do produto que voce quer comprar, para informarmos em quantas vezes pode parcelar: R$ '))
+print('''
+Digite sua forma de pagamento:
+1 - A vista 10% de desconto
+2 - A vista no Cartao 5% de desconto
+3 - Cheque 10% de desconto
+4 - Parcelado 2x valor normal
+5 - Parcelado 3x ou mais 20% de juros
+''')
+parametro = int(input('Digite o numero da sua opção: '))
+
+valor1 = ((produto * 10) / 100)
+valor2 = (((produto * 5 ) / 100) - produto)*1
+valor3 = ((produto * 20 ) / 100 ) + produto
+
+if parametro == 1:
+    print('Voce escolheu pagamento A Vista!\nDesta forma seu produto saira no valor de:{}R${:.2f}{}'.format(cores['amarelo'], produto - valor1, cores['limpa']))
+elif parametro == 2:
+    print('Voce escolheu pagamento A vista no Cartão!\nDesta forma seu produto saira no valor de:{}R${:.2f}{}')
+elif parametro ==3:
+    print('Voce escolheu pagamento em Cheque:')
+elif parametro == 4:
+    print('Voce escolheu pagamento Parcelado em 2x')
+else:
+    print('Voce escolheu parcelar seu pagamento e 3X ou mais')
