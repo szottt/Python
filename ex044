@@ -14,7 +14,7 @@ cores = {
 
 
 
-print('{}SEJA BEM VINDO A NOSSA LOJA DIGITAL{}'.format(cores['sublinhado'], cores['limpa']))
+print('{:=^100}'.format('SEJA BEM VINDO A NOSSA LOJA DIGITAL'))
 produto = float(input('Digite o valor do produto que voce quer comprar, para informarmos em quantas vezes pode parcelar: R$ '))
 print('''
 Digite sua forma de pagamento:
@@ -24,7 +24,7 @@ Digite sua forma de pagamento:
 4 - Parcelado 2x valor normal
 5 - Parcelado 3x ou mais 20% de juros
 ''')
-parametro = int(input('Digite o numero da sua opção: '))
+parametro = int(input('Qual a forma de pagamento: '))
 
 valor1 = ((produto * 10) / 100)
 valor2 = ((produto * 5 ) / 100)
@@ -40,6 +40,7 @@ elif parametro ==3:
     print('Voce escolheu pagamento em Cheque!\nDesta forma seu produto saira no valor de:{}R${:.2f}{}'.format(cores['azul'],produto - valor1, cores['limpa']))
 elif parametro == 4:
     print('Voce escolheu pagamento Parcelado em 2x \nDesta forma o valor saira no valor normal sem descontos {}R${:.2f}{} e as parcelas ficaram no valor de {}{:.2f}{}'.format(cores['azul'],produto,cores['limpa'],cores['sublinhado'],valor4,cores['limpa']))
-else:
-    print('Voce escolheu parcelar seu pagamento e 3X ou mais \nDesta forma sera adicionado um jutos de 20% e o valor do seu produto saira {}R${:.2f}{} e as parcelas sairam no valor de {}R${:.2f}{}'.format(cores['vermelho'],produto + valor3,cores['limpa'],cores['sublinhado'], valor5,cores['limpa']))
-
+elif parametro == 5:
+    totalparcela = int(input('Quantas parcelas:'))
+    parcela = (valor3 + produto) / totalparcela
+    print('Voce escolheu parcelar seu pagamento e 3X ou mais \nDesta forma sera adicionado um jutos de 20% e o valor do seu produto saira {}R${:.2f}{} voce escolheu parcelar em {}X de {}R${:.2f}{}'.format(cores['vermelho'],produto + valor3,cores['limpa'],totalparcela,cores['sublinhado'],parcela,cores['limpa']))
