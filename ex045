@@ -9,7 +9,7 @@ cores = {
         'limpa':'\033[m',
         'amarelo':'\033[4;32m',
         'azul':'\033[4;34m',
-        'vermelho':'\033[4;31',
+        'vermelho':'\033[4;31m',
         'verde_claro':'\033[4;36m',
         'sublinhado':'\033[4m'
 }
@@ -23,32 +23,45 @@ print('''VAMOS BRINCAR ASSIM, CADA SINAL EQUIVALE A UM NUMERO:
 3 - PEDRA''')
 print('-=-' * 20)
 jogador = int(input('Vamos começar, coloque o numero respectivo a sua jogada: '))
-print('{}P E N S A N D O ...{}'.format(cores['verde_claro'],cores['limpa']))
+print('{}J O{}'.format(cores['verde_claro'],cores['limpa']))
 sleep(1)
-print('\n{}SE PREPARE PARA PERDER...{}'.format(cores['verde_claro'], cores['limpa']))
+print('{}K E N{}'.format(cores['verde_claro'],cores['limpa']))
+sleep(1)
+print('{}P O{}'.format(cores['verde_claro'],cores['limpa']))
 sleep(1)
 
 if jogador == 1 and computador == 3:
     print('-=-' * 10)
     print('{}JOGADOR ESCOLHEU PAPEL E EU ESCOLHI PEDRA...{}\n'.format(cores['sublinhado'],cores['limpa']))
-    print('{}Desta forma voce GANHOU!!{}'.format(cores['azul'], cores['limpa']))
+    print('{}DESTA VEZ VOCE GANHOU!!{}'.format(cores['azul'], cores['limpa']))
     print('\n{}Pois PAPEL ganha de PEDRA.{}'.format(cores['sublinhado'],cores['limpa']))
     print('-=-' * 10)
 elif jogador == 3 and computador == 2:
     print('-=-' * 10)
     print('{}JOGADOR ESCOLHEU PEDRA E EU ESCOLHI TESOURA...{}\n'.format(cores['sublinhado'],cores['limpa']))
-    print('{}Desta forma voce GANHOU!!{}'.format(cores['azul'], cores['limpa']))
+    print('{}DESTA VEZ VOCE GANHOU!!{}'.format(cores['azul'], cores['limpa']))
     print('\n{}Pois PEDRA ganha de TESOURA.{}'.format(cores['sublinhado'],cores['limpa']))
     print('-=-' * 10)
 elif jogador == 2 and computador == 1:
     print('-=-' * 10)
     print('{}JOGADOR ESCOLHEU TESOURA E EU ESCOLHI PAPEL...{}\n'.format(cores['sublinhado'], cores['limpa']))
-    print('{}Desta forma voce GANHOU!!{}'.format(cores['azul'], cores['limpa']))
+    print('{}DESTA VEZ VOCE GANHOU!!{}'.format(cores['azul'], cores['limpa']))
     print('\n{}Pois TESOURA ganha de PAPEL.{}'.format(cores['sublinhado'],cores['limpa']))
     print('-=-' * 10)
-else:
+elif jogador == computador:
     print('-=-' * 10)
-    print('{]VOCE PERDEU! TREINE MAIS POIS SOU MUITO BOM!!!{}'.format(cores['vermelho'],cores['limpa']))
+    print('\n{}E M P A T O U !!.{}'.format(cores['sublinhado'],cores['limpa']))
     print('-=-' * 10)
 
-print(computador)
+else:
+    print('-=-' * 10)
+    print('{}VOCE PERDEU! TREINE MAIS, EU SOU MUITO BOM!!!{}'.format(cores['vermelho'],cores['limpa']))
+    print('-=-' * 10)
+
+if computador == 1:
+    print('O COMPUTADOR ESCOLHEU PAPEL!!')
+if computador == 2:
+        print('O COMPUTADOR ESCOLHEU TESOURA!!')
+if computador == 3:
+        print('O COMPUTADOR ESCOLHEU PEDRA!!')
+ 
