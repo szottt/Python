@@ -44,3 +44,6 @@ elif parametro == 5:
     totalparcela = int(input('Quantas parcelas:'))
     parcela = (valor3 + produto) / totalparcela
     print('Voce escolheu parcelar seu pagamento e 3X ou mais \nDesta forma sera adicionado um jutos de 20% e o valor do seu produto saira {}R${:.2f}{} voce escolheu parcelar em {}X de {}R${:.2f}{}'.format(cores['vermelho'],produto + valor3,cores['limpa'],totalparcela,cores['sublinhado'],parcela,cores['limpa']))
+else:
+    print('\n{}OPÇÃO DE PAGAMENTO INVALIDA!{}'.format(cores['vermelho'],cores['limpa']))
+    
