@@ -8,7 +8,8 @@ cores = {
     'azul':'\033[4;34m',
     'amarelo':'\033[4;32m',
     'sublinhado':'\033[4m',
-    'negrito':'\033[1m'
+    'negrito':'\033[1m',
+    'vermelho':'\033[4;31m'
 }
 
 
@@ -26,16 +27,19 @@ Digite sua forma de pagamento:
 parametro = int(input('Digite o numero da sua opção: '))
 
 valor1 = ((produto * 10) / 100)
-valor2 = (((produto * 5 ) / 100) - produto)*1
-valor3 = ((produto * 20 ) / 100 ) + produto
+valor2 = ((produto * 5 ) / 100)
+valor3 = ((produto * 20 ) / 100 )
+valor4 = (produto/2)
+valor5 = (produto + valor3) / 2
 
 if parametro == 1:
     print('Voce escolheu pagamento A Vista!\nDesta forma seu produto saira no valor de:{}R${:.2f}{}'.format(cores['amarelo'], produto - valor1, cores['limpa']))
 elif parametro == 2:
-    print('Voce escolheu pagamento A vista no Cartão!\nDesta forma seu produto saira no valor de:{}R${:.2f}{}')
+    print('Voce escolheu pagamento A vista no Cartão!\nDesta forma seu produto saira no valor de:{}R${:.2f}{}'.format(cores['amarelo'], produto - valor2, cores['limpa'] ))
 elif parametro ==3:
-    print('Voce escolheu pagamento em Cheque:')
+    print('Voce escolheu pagamento em Cheque!\nDesta forma seu produto saira no valor de:{}R${:.2f}{}'.format(cores['azul'],produto - valor1, cores['limpa']))
 elif parametro == 4:
-    print('Voce escolheu pagamento Parcelado em 2x')
+    print('Voce escolheu pagamento Parcelado em 2x \nDesta forma o valor saira no valor normal sem descontos {}R${:.2f}{} e as parcelas ficaram no valor de {}{:.2f}{}'.format(cores['azul'],produto,cores['limpa'],cores['sublinhado'],valor4,cores['limpa']))
 else:
-    print('Voce escolheu parcelar seu pagamento e 3X ou mais')
+    print('Voce escolheu parcelar seu pagamento e 3X ou mais \nDesta forma sera adicionado um jutos de 20% e o valor do seu produto saira {}R${:.2f}{} e as parcelas sairam no valor de {}R${:.2f}{}'.format(cores['vermelho'],produto + valor3,cores['limpa'],cores['sublinhado'], valor5,cores['limpa']))
+
