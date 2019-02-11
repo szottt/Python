@@ -1,0 +1,10 @@
+#57 FAÇA UM PROGRAMA QUE LEIA O SEXO DE UMA PESSOA (M OU F),CASO ESTEHA ERRADO PEÇA A DIGITAÇÃO NOVAMENTE.
+
+ida = 0
+print('Ola vamos descobri o sexo da criança!!')
+while ida!='F':
+    ida = str(input('Digite o sexo da criança[F/M]: ')).strip().upper()
+    if ida == 'F':
+        print('PARABENS VOCE ACERTOU!')
+    else:
+        print('Vamos perguntar novamente...')
