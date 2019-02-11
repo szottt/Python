@@ -1,0 +1,14 @@
+#61 REFAÇA O DESAFIO 61 LENDO O PRIMEIRO TERMO DE UMA PA, MOSTRANDO OS 10 PRIMEIROS TERMOS DA PROGRESSAO USANDO O WHILE.
+print('GERADOR DE PA')
+print('-=-' * 15)
+n = int(input('Digite o primeiro termo: '))
+p = int(input('Digite o Razão: '))
+t = n
+c = 1
+
+while c <= 10:
+    print('{} > '.format(t), end='')
+    t += p
+    c += 1
+
+print('Esses sao os dados de Uma PA')
