@@ -1,0 +1,4 @@
+#81) Crie um programa que leia varios numeros e colocar em uma lista, 
+#depois disso crie duas listas extras que vao conter apenas valores pares 
+#e os valores impares digitados respectivamente, 
+#Ao final mostre conteudo das tres listas geradas.(continuar [s/n])
