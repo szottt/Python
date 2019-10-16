@@ -1,5 +1,0 @@
-caract = input('Digite qualquer caracter: ')
-print('Este caracter é da classe: ', type(caract))
-print('Ele é numerico?',caract.isnumeric())
-print('Ele é alphanumeroco? ', caract.isalpha())
-print('Ele é Decimal? ', caract.isdecimal())
